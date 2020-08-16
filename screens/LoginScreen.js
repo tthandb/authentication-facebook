@@ -14,7 +14,6 @@ export default function LoginScreen(props) {
 			} = await Facebook.logInWithReadPermissionsAsync({
 				permissions: ["public_profile"]
 			});
-			console.log(type, token);	
 			if (type === "success") {
 				AsyncStorage.setItem("@token", token)
 				props.navigation.navigate("Main")
